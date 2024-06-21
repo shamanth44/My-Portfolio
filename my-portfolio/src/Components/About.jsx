@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 function About() {
+  const aboutRef = useRef(null);
   return (
     <>
-      <div className="md:mt-36 mt-10">
+      <div ref={aboutRef} className="md:mt-32 mt-10 pt-10">
         <h1 className="text-4xl font-semibold text-center">About me</h1>
       </div>
 
@@ -13,7 +14,7 @@ function About() {
 
         <div className="basis-1/3">
           <img
-            src="/IMG_6770-01.jpg"
+            src="https://res.cloudinary.com/shamanth-ganiger/image/upload/v1718805240/Profile_s379c7.jpg"
             alt=""
             className="md:max-w-96 max-w-56 rounded-3xl"
           />

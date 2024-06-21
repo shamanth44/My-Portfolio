@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar() {
-
+function Navbar({ aboutRef, projectsRef, skillsRef, contactRef }) {
   const [menu, setMenu] = useState(true);
+
+  const scrollToComponent = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    setMenu(!menu)
+  };
+
   return (
     <>
       <nav className='flex md:flex md:flex-row flex-col justify-around items-center py-4 md:px-10 md:py-8'>
@@ -23,10 +28,10 @@ function Navbar() {
        </div>
         <div className='w-full md:w-auto text-center px-20 md:px-0'>
         <ul className={`flex gap-2 ${menu? "hidden" : ""} text-xl flex-col md:flex md:flex-row md:gap-10 text-gray-600 py-4`}>
-            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0'>About</li>
-            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0'>Skills</li>
-            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0'>Projects</li>
-            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0'>Contact</li>
+            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0' onClick={() => scrollToComponent(aboutRef)}>About</li>
+            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0' onClick={() => scrollToComponent(projectsRef)}>Projects</li>
+            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0' onClick={() => scrollToComponent(skillsRef)}>Skills</li>
+            <li className='cursor-pointer text-black hover:text-gray-500 md:hover:underline md:decoration-gray-400 md:underline-offset-8 border-b-2 md:border-0' onClick={() => scrollToComponent(contactRef)}>Contact</li>
         </ul>
         </div>
       </nav>
