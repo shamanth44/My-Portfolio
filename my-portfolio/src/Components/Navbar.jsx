@@ -10,7 +10,7 @@ function Navbar({ aboutRef, projectsRef, skillsRef, contactRef }) {
 
   const scrollToComponent = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
-    setMenu(!menu)
+    // setMenu(!menu)
   };
 
   return (
