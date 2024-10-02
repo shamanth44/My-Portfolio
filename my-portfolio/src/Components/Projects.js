@@ -15,6 +15,11 @@ export const projects = [
         image: "https://res.cloudinary.com/shamanth-ganiger/image/upload/v1718805239/project03_thkdya.png",
         gitLink: "https://github.com/shamanth44",
         liveLink: "https://employee-dashboard-ashen.vercel.app/",
+    },{
+        title: "ScribbleHub",
+        image: "https://res.cloudinary.com/shamanth-ganiger/image/upload/v1727895674/Screenshot_479_mzypqu.png",
+        gitLink: "https://github.com/shamanth44",
+        liveLink: "https://scribble-hub-one.vercel.app/",
     },
     
 ]

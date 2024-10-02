@@ -11,7 +11,7 @@ function AllProjects() {
         <h1 className="text-4xl font-semibold text-center">Projects</h1>
       </div>
       <div className="flex mx-20 justify-center gap-10 flex-wrap">
-        {projects.map((project, index)=>{
+        {projects.reverse().map((project, index)=>{
           return(
             <ProjectCard key={index} src={project.image} title={project.title} href={project.liveLink} gitLink={project.gitLink}/>
           )
